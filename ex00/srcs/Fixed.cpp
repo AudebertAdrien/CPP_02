@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 13:50:55 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/23 14:23:44 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/23 15:58:52 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Fixed::Fixed() {
 
 Fixed::Fixed(const Fixed &rhs) {
     std::cout << "Copy constructor called" << std::endl;
-    //this->setRawBits(rhs.getRawBits());
      *this = rhs;
 }
 
