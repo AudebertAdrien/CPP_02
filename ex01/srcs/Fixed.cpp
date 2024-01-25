@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 13:50:55 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/23 16:19:09 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/25 14:29:43 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ Fixed::Fixed() {
     this->_fixedPointValue = 0;
 }
 
-Fixed::Fixed( const int n ) {
+Fixed::Fixed(const int n) {
     std::cout << "Int constructor called" << std::endl;
 	_fixedPointValue =  n << _fractionalBits;
 }
 
-Fixed::Fixed( const float n ) {
-    std::cout << "Float constructor called" << round(n) << std::endl;
-	_fixedPointValue = round( n * (1 << _fractionalBits));
+Fixed::Fixed(const float n) {
+    std::cout << "Float constructor called" << std::endl;
+	_fixedPointValue = round(n * (1 << _fractionalBits));
 }
 
 Fixed::Fixed(const Fixed &rhs) {
@@ -54,7 +54,10 @@ void    Fixed::setRawBits(int const raw) {
 }
 
 float   Fixed::toFloat(void) const {
-    return static_cast<float>( this->getRawBits() ) / ( 1 << _fractionalBits );
+    //std::cout << "HERE " << _fixedPointValue << std::endl;
+    //std::cout << "HERE " << (this->getRawBits()) / ( 1 << _fractionalBits) << std::endl;
+    //std::cout << "HERE " << static_cast<float>(this->getRawBits()) / ( 1 << _fractionalBits) << std::endl;
+    return static_cast<float>(this->getRawBits()) / ( 1 << _fractionalBits);
 }
 
 int     Fixed::toInt(void) const {
